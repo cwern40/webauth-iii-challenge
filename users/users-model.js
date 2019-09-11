@@ -21,4 +21,9 @@ function findBy(filter) {
 
 function add(user) {
     return db('users').insert(user)
+    // .then(newUser => {
+    //     return findById(newUser.id).then(task => {
+    //         return task;
+    //     })
+    // })
 }
