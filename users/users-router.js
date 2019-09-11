@@ -3,6 +3,7 @@ const router = require('express').Router()
 const Users = require('./users-model');
 const restricted = require('../auth/restricted');
 
+// route to get the users within the same department. Requirew a JWT in the header. /api/users
 router.get('/', restricted, (req, res) => {
     const { department } = req.decodedToken;
 

@@ -4,6 +4,7 @@ const generateToken = require('./generateToken')
 
 const Users = require('../users/users-model');
 
+// endpoint to register a new user. Requires username, password, and department. /api/register
 router.post('/register', (req, res) => {
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 10);
@@ -20,6 +21,7 @@ router.post('/register', (req, res) => {
         });
 });
 
+// endpoint to login. Requires username and password. /api/login
 router.post('/login', (req, res) => {
     let { username, password } = req.body;
 
